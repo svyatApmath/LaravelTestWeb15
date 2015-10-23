@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
+Route::post("games", "GamesController@store");
+Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
+Route::get("games/{id}", array('uses' => "GamesController@show", "as" => "games.show"));
+Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "games.update"));
+Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
+Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
