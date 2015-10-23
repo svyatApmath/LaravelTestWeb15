@@ -6,16 +6,15 @@
 
 	<hr>
 
-	<form><button type="button" 
-	class="btn btn-default" onclick="window.location='{{ route("games.create") }}'">Create</button></form>
+	{!! HTML::linkAction('GamesController@create', 'Create', array(), array('class' => 'btn btn-default')) !!}
 
 	{!! Form::open(array('route' => 'games')) !!}
 		{!! Form::submit('Store', array("class"=>"btn btn-default")) !!}
 	{!! Form::close() !!}
 
-	<form><button type="button" class="btn btn-default" onclick="window.location='{{ route("games.show", ['id' => 1]) }}'">Show</button></form>
+	{!! HTML::linkAction('GamesController@show', 'Show', array(), array('class' => 'btn btn-default')) !!}
 
-	<form><button type="button" class="btn btn-default" onclick="window.location='{{ route("games.edit", ['id' => 1]) }}'">Edit</button></form>
+	{!! HTML::linkAction('GamesController@show', 'Edit', array('id' => 1), array('class' => 'btn btn-default')) !!}
 
 	{!! Form::open(array("route" => array("games.destroy", "id" => 1))) !!}
 		<button type="submit" class="btn btn-default">Update</button>
@@ -26,7 +25,5 @@
 	{!! Form::close() !!}
 
 	<hr>
-
-	<img src="http://renotes.ru/content/public/upload/velosiped-iz-kostyley_0_o.jpg" />
 	
 @stop
