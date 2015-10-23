@@ -6,10 +6,7 @@
 
 	<hr>
 
-	<div class="btn-group">
-		<button type="button" 
-			class="btn" onclick="window.location='{{ route("games") }}'">Main Menu</button>
-		
-	</div>
+
+	{!! HTML::linkAction('GamesController@index', 'Main Menu', array(), array('class' => 'btn btn-default')) !!}
 	
 @stop
