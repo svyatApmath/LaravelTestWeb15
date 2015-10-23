@@ -9,32 +9,32 @@ class Ceacat extends Controller {
     
 public function index()
 {
-    return view('Ceacat.Panel');
+    return view('ceacat.panel');
 }
 
 public function create()
 {
-    return view('Ceacat.Somebody_new');
+    return view('ceacat.create');
 }
 public function store()
 {
-    return view('Ceacat.Store');
+    return view('ceacat.store');
 }
 public function show($id)
 {
     
-    return view('Ceacat.Page1',compact($id));
+    return view('ceacat.show',compact('id'));
 }
 public function edit($id)
 {
-    return view('Ceacat.Edit',compact($id));
+    return view('ceacat.edit',compact('id'));
 }
 public function update($id)
 {
-    return view('Ceacat.Update',compact($id));
+    return view('ceacat.update',compact('id'));
 }
 public function destroy($id)
 {
-    return view('Ceacat.Destroy',compact($id));
+    return view('ceacat.destroy',compact('id'));
 }
 }
