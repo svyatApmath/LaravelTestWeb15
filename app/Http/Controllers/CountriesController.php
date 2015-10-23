@@ -1,18 +1,8 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 namespace App\Http\Controllers;
 
-//use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
-//use Illuminate\Foundation\Validation\ValidatesRequests;
-//use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class CountriesController extends BaseController{
  
