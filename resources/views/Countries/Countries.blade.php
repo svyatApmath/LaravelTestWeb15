@@ -13,19 +13,19 @@
     {!!Form::submit('Store')!!}
     {!!Form::close()!!}
     
-    {!!Form::open(['route' => 'show','method'=>'GET'])!!}
+    {!!Form::open(['route' => array('show','id'=>1),'method'=>'GET'])!!}
     {!!Form::submit('Show')!!}
     {!!Form::close()!!}
     
-    {!!Form::open(['route' => 'edit','method'=>'GET'])!!}
+    {!!Form::open(['route' => array('edit','id'=>1),'method'=>'GET'])!!}
     {!!Form::submit('Edit')!!}
     {!!Form::close()!!}
     
-    {!!Form::open(['route' => 'update','method'=>'POST'])!!}
+    {!!Form::open(['route' => array('update','id'=>1),'method'=>'POST'])!!}
     {!!Form::submit('Update')!!}
     {!!Form::close()!!}
     
-    {!!Form::open(['route' => 'destroy','method'=>'DELETE'])!!}
+    {!!Form::open(['route' => array('destroy','id'=>1),'method'=>'DELETE'])!!}
     {!!Form::submit('Destroy')!!}
     {!!Form::close()!!}
     
