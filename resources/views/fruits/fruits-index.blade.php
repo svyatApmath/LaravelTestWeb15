@@ -1,4 +1,4 @@
-@extends('Fruits.layout')
+@extends('fruits.layout')
 
 @section('title', 'Fruits')
 @section('body')
