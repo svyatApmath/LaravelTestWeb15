@@ -1,10 +1,9 @@
 @extends('fruits.layout')
 
-@section('title', 'Fruits create!')
+@section('title', 'Fruits create')
+
 @section('body')
-<p>Fruits create</p> 
-{!! Form::open(array('action' => 'Fruits@index', 'method'=>'GET')) !!}
-{!! Form::submit('back')!!}
-{!! Form::close()!!}
+<h1>Fruits create!</h1>
+{!! link_to_action('Fruits@index', 'back', [], array('class' => 'btn btn-default')) !!}
 @endsection
     

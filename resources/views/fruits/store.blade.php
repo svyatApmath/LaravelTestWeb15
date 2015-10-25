@@ -1,9 +1,8 @@
 @extends('fruits.layout')
 
 @section('title', 'Fruits store')
+
 @section('body')
-<p>Fruits store</p>
-{!! Form::open(array('action' => 'Fruits@index', 'method'=>'GET')) !!}
-{!! Form::submit('back')!!}
-{!! Form::close()!!}
+<h2>Fruits store+</h2>
+{!! link_to_action('Fruits@index', 'back', [], array('class' => 'btn btn-default')) !!}
 @endsection

@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <title>@yield('title')</title>
         <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                text-align: center;
-                font-weight: 100;
-                font-family: 'Lato';
+            body
+            {
                 font-size: 48px;
-                
+                font-family: 'Lato';
+                text-align: center;
             }
-
         </style>
     </head>
     <body>   
