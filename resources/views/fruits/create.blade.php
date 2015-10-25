@@ -4,6 +4,6 @@
 
 @section('body')
 <h1>Fruits create!</h1>
-{!! link_to_action('Fruits@index', 'back', [], array('class' => 'btn btn-default')) !!}
+{!! link_to_action('Fruits@index', 'back', [], ['class' => 'btn btn-default']) !!}
 @endsection
     
