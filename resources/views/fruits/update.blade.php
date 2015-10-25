@@ -4,6 +4,6 @@
 
 @section('body')
 <h2>Fruits update</h2>
-{!! link_to_action('Fruits@index', 'back', [], array('class' => 'btn btn-default')) !!}
+{!! link_to_action('Fruits@index', 'back', [], ['class' => 'btn btn-default']) !!}
 @endsection
     
