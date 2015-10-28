@@ -1,4 +1,7 @@
 <?php namespace App\Http\Controllers;
+use App\Whale;
+use Request;
+use Illuminate\Support\Facades\Input;
 class Ceacat extends Controller {
 
 /* 
@@ -9,7 +12,8 @@ class Ceacat extends Controller {
     
 public function index()
 {
-    return view('ceacat.panel');
+    $whales = Whale::all();
+    return view('ceacat.panel',compact('whales'));
 }
 
 public function create()
@@ -18,23 +22,41 @@ public function create()
 }
 public function store()
 {
-    return view('ceacat.store');
+    $data = Request::only('id','firstName','lastName','sex');
+    $whale = new Whale();
+    $whale->identity = $data['id'];
+    $whale->firstName = $data['firstName'];
+    $whale->lastName = $data['lastName'];
+    $whale->Sex = $data['sex'];
+    $whale->save();
+    
+    return redirect('Ceacat');
 }
 public function show($id)
 {
-    
-    return view('ceacat.show',compact('id'));
+    $object = Whale::find(1);
+   
+    return $object;
 }
 public function edit($id)
 {
-    return view('ceacat.edit',compact('id'));
+    return view('ceacat.edit')->with('whale',Whale::find($id));
 }
-public function update($id)
+public function update()
 {
-    return view('ceacat.update',compact('id'));
+    $new = Request::only('id','firstName','lastName','sex');
+    $old = Whale::find($new['id']);
+    $old->identity = $new->identity;
+    $old->firstName = $new->firstName;
+    $old->lastName = $new->lastName;
+    $old->Sex = $new->Sex; 
+    $old->save();
+    return redirect('Ceacat');
 }
 public function destroy($id)
 {
-    return view('ceacat.destroy',compact('id'));
+    $whale = Whale::find($id);
+    $whale->delete();
+    return $whale;
 }
 }
