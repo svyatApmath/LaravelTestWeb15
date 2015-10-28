@@ -1,24 +1,32 @@
-@extends('layouts.master')
+@extends('ceacat.template')
 @section('title','Index')
 @section('content')
 <h1>Alloha!</h1>
-<p>Choose something</p>
+<p>Choose somebody or add <mark>new</mark></p>
 {!! Form::open(['route' => 'ceacat.create','method' => 'get'])!!}
-{!!Form::submit('Create', ['class' => 'btn btn-default']) !!}
-{!!Form::close()!!}
-{!! Form::open(['route' => 'ceacat.store','method' => 'post'])!!}
-{!!Form::submit('Store', ['class' => 'btn btn-success']) !!}
-{!!Form::close()!!}
-{!! Form::open(['route' => ['ceacat.show','id' => 1],'method' => 'get'])!!}
-{!!Form::submit('Show', ['class' => 'btn btn-info']) !!}
-{!!Form::close()!!}
-{!! Form::open(['route' => ['ceacat.edit', 'id' => 1], 'method' => 'get'])!!}
-{!!Form::submit('Edit', ['class' => 'btn btn-primary']) !!}
-{!!Form::close()!!}
-{!! Form::open(['route' => ['ceacat.update', 'id' => 1], 'method' => 'put'])!!}
-{!!Form::submit('Update', ['class' => 'btn btn-warning']) !!}
-{!!Form::close()!!}
-{!! Form::open(['route' => ['ceacat.destroy', 'id' => 1], 'method' => 'delete'])!!}
-{!!Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-{!!Form::close()!!}
+{!!Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+{!!Form::close()!!} 
+</br>
+<table class='table'>
+    <tr >
+        <th> # </th>
+        <th> Identity </th>
+        <th> Firstname </th>
+        <th> Lastname </th>
+        <th> Sex </th>
+        <th> Edit </th>
+        <th> Delete </th>
+    </tr>
+    @foreach($whales as $whale)
+    <tr >
+        <td>{!! $whale['id'] !!} </td>
+        <td> {!! $whale['identity'] !!} </td>
+        <td> {!! $whale['firstName'] !!} </td>
+        <td> {!! $whale['lastName'] !!} </td>
+        <td> {!! $whale['sex'] !!} </td>
+        <td> {!! link_to_route('ceacat.edit','Edit',[$whale['id']])!!}</td>
+        <td> {!! link_to_action('Ceacat@destroy','Delete',[$whale['id']])!!}</td>
+    </tr>
+    @endforeach
+</table>
 @stop
