@@ -1,9 +1,21 @@
-@extends('layouts.master')
-@section('title','Some page')
-@section ('content')
-<h1>{!! $object->id !!}</h1>
+@extends('ceacat.template')
 
-{!! Form::open(['route' => 'ceacat.index','method' => 'get'])!!}
-{!!Form::submit('Back to Index', ['class' => 'btn btn-primary']) !!}
-{!!Form::close()!!}
+@section('title','Some page')
+
+@section ('content')
+
+    <h1>Ceacat show</h1>
+
+    <p> {!! $object['id'] !!}</p>
+
+    <p> {!! $object['identity'] !!}</p>
+
+    <p> {!! $object['firstname'] !!}</p>
+
+    <p> {!! $object['lastname'] !!}</>
+
+    <p> {!! $object['sex'] !!}</p>
+
+    {!! HTML::link('Ceacat','Back to Ceacat', ['class'=>'btn btn-primary']) !!}
+
 @stop

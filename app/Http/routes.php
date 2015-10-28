@@ -11,7 +11,6 @@ Route::get('countries/',[
     ]);
 Route::get('countries/create',[
     'as' => 'create',
-    
     'uses' => 'CountriesController@create'
     ]);
 Route::get('countries/{id}',[
@@ -20,14 +19,13 @@ Route::get('countries/{id}',[
     ]);
 Route::post('countries/',[
     'as'=> 'store',
-   // $input => Input::get('firstName','lastName','sex'),
     'uses'=>'CountriesController@store'
     ]);
 Route::get('countries/{id}/edit',[
     'as' => 'edit',
     'uses' => 'CountriesController@edit'
     ]);
-Route::post('countries/{id}',[
+Route::put('countries/{id}',[
     'as' => 'update',
     'uses' => 'CountriesController@update'
     ]);
@@ -61,10 +59,10 @@ Route::get('Ceacat/{id}',[
 Route::get('Ceacat/{id}/edit',[
     'as' => 'ceacat.edit', 'uses' => 'Ceacat@edit'
 ]);
-Route::put('Ceacat',[
+Route::put('Ceacat/{id}',[
     'as' => 'ceacat.update', 'uses' => 'Ceacat@update'
 ]);
-Route::delete('Ceacat',[
+Route::delete('Ceacat/{id}',[
     'as' => 'ceacat.destroy' , 'uses' => 'Ceacat@destroy',
 ]);
 Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
