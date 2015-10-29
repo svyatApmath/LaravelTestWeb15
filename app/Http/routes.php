@@ -59,12 +59,15 @@ Route::get('whale/{id}',[
 Route::get('whale/{id}/edit',[
     'as' => 'whale.edit', 'uses' => 'Whales@edit'
 ]);
+
 Route::put('whale/{id}',[
     'as' => 'whale.update', 'uses' => 'Whales@update'
 ]);
 Route::delete('whale/{id}',[
     'as' => 'whale.destroy' , 'uses' => 'Whales@destroy',
+
 ]);
+
 Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
 Route::post("games", "GamesController@store");
 Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
