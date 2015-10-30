@@ -25,7 +25,7 @@ Route::get('countries/{id}/edit',[
     'as' => 'edit',
     'uses' => 'CountriesController@edit'
     ]);
-Route::post('countries/{id}',[
+Route::put('countries/{id}',[
     'as' => 'update',
     'uses' => 'CountriesController@update'
     ]);
