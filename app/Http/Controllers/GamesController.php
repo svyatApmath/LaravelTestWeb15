@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Games;
 use App\Http\Controllers\Controller;
 
 
@@ -13,7 +14,9 @@ class GamesController extends Controller
 
 	public function index()
 	{
-		return view("games.index");
+		$games = Games::all();
+
+		return view("games.index", compact('games'));
 	}
 
 	public function create()
@@ -28,7 +31,8 @@ class GamesController extends Controller
 
 	public function show($id)
 	{
-		return view("games.show", compact("id"));
+		$game = Games::findOrFail($id);
+		return view("games.show", compact("game"));
 	}
 
 	public function edit($id)

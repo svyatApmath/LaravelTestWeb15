@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <h1>Show game #{{ $id }}</h1>
+    <h1>Show game: {{ $game->title }}</h1>
 
     <hr>
 

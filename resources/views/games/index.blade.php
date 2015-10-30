@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <h1>Test Game Panel</h1>
+    <h1>WIKI: games</h1>
 
     <hr>
 
@@ -25,4 +25,35 @@
     {!! Form::close() !!}
 
     <hr>
+
+    <div class = 'container'>
+            <table class='table table-bordered table-striped'>
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <h4><b> Title </b></h4>
+                        </td>
+                        <td>
+                            <h4><b> Description </b></h4>
+                        </td>
+                    </tr>
+
+                     @foreach ($games as $game)
+                        <tr>
+                            <td>
+                               <!-- {{$game->title}} -->
+
+                                {!! HTML::linkAction('GamesController@show', 
+                                    $game->title, ['id' => $game->id] )
+                                !!}
+                                
+                            </td>
+                            <td>{{$game->description}}</td>
+                        </tr>
+                    @endforeach
+
+                </tbody>
+            </table>   
+        </div>
 @stop

@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Web15</title>
-
+    <title>WIKI: games</title>
 </head>
 <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container"> 
-            <a class="navbar-brand"> Test Web15:Games </a>
+            <a class="navbar-brand"> WIKI: games </a>
         </div>
     </div>
 
