@@ -13,37 +13,37 @@ class GamesController extends Controller
 
 	public function index()
 	{
-		return view("games.gamesIndex");
+		return view("games.index");
 	}
 
 	public function create()
 	{
-		return view("games.gamesCreate");
+		return view("games.create");
 	}
 
 	public function store()
 	{
-		return view("games.gamesStore");
+		return view("games.store");
 	}
 
 	public function show($id)
 	{
-		return view("games.gamesShow", compact("id"));
+		return view("games.show", compact("id"));
 	}
 
 	public function edit($id)
 	{
-		return view("games.gamesEdit", compact("id"));
+		return view("games.edit", compact("id"));
 	}
 
 	public function update($id)
 	{
-		return view("games.gamesUpdate", compact("id"));
+		return view("games.update", compact("id"));
 	}
 
 	public function destroy($id)
 	{
-		return view("games.gamesDestroy", compact("id"));
+		return view("games.destroy", compact("id"));
 	}
 
 }
