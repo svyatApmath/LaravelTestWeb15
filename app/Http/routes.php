@@ -72,3 +72,11 @@ Route::get("games/{id}", array('uses' => "GamesController@show", "as" => "games.
 Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "games.update"));
 Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
 Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
+
+Route::get('computers/', 'ComputersController@index');
+Route::post('computers/', 'ComputersController@store');
+Route::get('computers/create', 'ComputersController@create');
+Route::get('computers/{id}', 'ComputersController@show');
+Route::get('computers/{id}/edit', 'ComputersController@edit');
+Route::post('computers/{id}','ComputersController@update');
+Route::delete('computers/{id}', 'ComputersController@destroy');
