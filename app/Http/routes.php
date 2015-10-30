@@ -66,6 +66,7 @@ Route::delete('Ceacat/{id}',[
     'as' => 'ceacat.destroy' , 'uses' => 'Ceacat@destroy'
 ]);
 
+
 // games
 
 Route::get('games', [
@@ -93,3 +94,12 @@ Route::delete('games/{id}', [
 Route::get('games/{id}/edit', [
     'as' => 'games.edit', 'uses' => 'GamesController@edit'
     ]);
+
+
+Route::get('computers/', 'ComputersController@index');
+Route::post('computers/', 'ComputersController@store');
+Route::get('computers/create', 'ComputersController@create');
+Route::get('computers/{id}', 'ComputersController@show');
+Route::get('computers/{id}/edit', 'ComputersController@edit');
+Route::post('computers/{id}','ComputersController@update');
+Route::delete('computers/{id}', 'ComputersController@destroy');
