@@ -6,37 +6,34 @@
 
     <hr>
 
-    {!! HTML::linkAction('GamesController@create', 'Create', array(), array('class' => 'btn btn-default')) !!}
-
+    <div class='container' align='center'>
+        {!! HTML::linkAction('GamesController@create', 
+            'Add new', [], 
+            ['class' => 'btn btn-lg btn-primary ']) !!}
+    </div>
+<!--
     {!! Form::open(array('route' => 'games', 'style'=>'display:inline')) !!}
         {!! Form::submit('Store', array("class"=>"btn btn-default")) !!}
     {!! Form::close() !!}
 
     {!! HTML::linkAction('GamesController@show', 'Show', array('id' => 1), array('class' => 'btn btn-default')) !!}
 
-    {!! HTML::linkAction('GamesController@show', 'Edit', array('id' => 1), array('class' => 'btn btn-default')) !!}
-
     {!! Form::open(array("route" => array("games.destroy", "id" => 1),'style'=>'display:inline')) !!}
         <button type="submit" class="btn btn-default">Update</button>
     {!! Form::close() !!}
-
-    {!! Form::open(array("route" => array("games.destroy", "id" => 1), "method" => "delete", 'style'=>'display:inline')) !!}
-        <button type="submit" class="btn btn-default">Destroy</button>
-    {!! Form::close() !!}
-
+-->
     <hr>
 
     <div class = 'container'>
             <table class='table table-bordered table-striped'>
+                <caption>Available games</caption>
                 <tbody>
 
                     <tr>
-                        <td>
-                            <h4><b> Title </b></h4>
-                        </td>
-                        <td>
-                            <h4><b> Description </b></h4>
-                        </td>
+                        <th width = 150>Title</th>
+                        <th>Description</th>
+                        <th width = 1>Edit</th>
+                        <th width = 1>Delete</th>
                     </tr>
 
                      @foreach ($games as $game)
@@ -50,6 +47,15 @@
                                 
                             </td>
                             <td>{{$game->description}}</td>
+                            <td>
+                                {!! HTML::linkAction('GamesController@edit', 
+                                '...', ['id' => $game->id], ['class' => 'btn btn-default']) !!}
+                            </td>
+                            <td>
+                                {!! Form::open(array("route" => array("games.destroy", "id" => $game->id), "method" => "delete", 'style'=>'display:inline')) !!}
+                                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i></button>
+                                {!! Form::close() !!}
+                            </td>
                         </tr>
                     @endforeach
 

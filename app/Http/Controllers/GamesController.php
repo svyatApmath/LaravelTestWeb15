@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\CreateNewGameRequest;
 use App\Games;
 use App\Http\Controllers\Controller;
 
@@ -12,42 +12,51 @@ use App\Http\Controllers\Controller;
 class GamesController extends Controller
 {
 
-	public function index()
-	{
-		$games = Games::all();
+    public function index()
+    {
+        $games = Games::latest()->get();
 
-		return view("games.index", compact('games'));
-	}
+        return view("games.index", compact('games'));
+    }
 
-	public function create()
-	{
-		return view("games.create");
-	}
+    public function create()
+    {
+        return view("games.create");
+    }
 
-	public function store()
-	{
-		return view("games.store");
-	}
+    public function store(CreateNewGameRequest $request)
+    {
+        Games::create($request->all());
 
-	public function show($id)
-	{
-		$game = Games::findOrFail($id);
-		return view("games.show", compact("game"));
-	}
+       return redirect('games');
+    }
 
-	public function edit($id)
-	{
-		return view("games.edit", compact("id"));
-	}
+    public function show($id)
+    {
+        $game = Games::findOrFail($id);
+        return view("games.show", compact("game"));
+    }
 
-	public function update($id)
-	{
-		return view("games.update", compact("id"));
-	}
+    public function edit($id)
+    {
+        $game = Games::findOrFail($id);
+        return view("games.edit", compact("game"));
+    }
 
-	public function destroy($id)
-	{
-		return view("games.destroy", compact("id"));
-	}
+    public function update($id, CreateNewGameRequest $request)
+    {
+        $game = Games::findOrFail($id);
+
+        $game->update($request->all());
+        return redirect('games');
+    }
+
+    public function destroy($id)
+    {
+        $game = Games::findOrFail($id);
+
+        $game->delete();
+        return redirect('games');
+    }
 
 }

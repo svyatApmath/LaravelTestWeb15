@@ -1,10 +1,18 @@
 @extends("games.template")
 
+
 @section("content")
 
-    <h1>Show game: {{ $game->title }}</h1>
+    <h2> <span class="label label-default">{{ $game->title }}</span></h2>
 
     <hr>
 
-    {!! HTML::linkAction('GamesController@index', 'Main Menu', array(), array('class' => 'btn btn-default')) !!}
+    <div class="panel panel-default">
+	  <div class="panel-heading">Description</div>
+	  <div class="panel-body">
+	    {{$game->description}}
+	  </div>
+	</div>
+
+    {!! HTML::linkAction('GamesController@index', 'Back', array(), array('class' => 'btn btn-default')) !!}
 @stop

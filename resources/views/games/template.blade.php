@@ -13,9 +13,11 @@
     </div>
 
     <hr>
+    <div class="jumbotron">
     <div class="container">
         @yield("content")
         <hr>
+    </div>
     </div>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
