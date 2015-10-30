@@ -33,6 +33,8 @@ Route::delete('countries/{id}',[
     'as' => 'destroy',
     'uses' => 'CountriesController@destroy'
     ]);
+-
+-
 Route::get('/fruits', ['as' => 'fruits.index', 'uses' => 'Fruits@index']);
 Route::get('/fruits/create', ['as'  => 'fruits.create', 'uses' => 'Fruits@create']);
 Route::post('/fruits', ['as' => 'fruits.store', 'uses' => 'Fruits@store']);
@@ -40,6 +42,8 @@ Route::get('/fruits/{fruit}', ['as' => 'fruits.show', 'uses' => 'Fruits@show']);
 Route::get('/fruits/{fruit}/edit', ['as' => 'fruits.edit', 'uses' => 'Fruits@edit']);
 Route::put('/fruits/{fruit}', ['as' => 'fruits.update', 'uses' => 'Fruits@update']);
 Route::delete('/fruits/{fruit}', ['as' => 'fruits.destroy', 'uses' => 'Fruits@destroy']);
+-
+-
 Route::get('Ceacat',[
     'as' => 'ceacat.index', 'uses' => 'Ceacat@index'
 ]);
@@ -61,6 +65,8 @@ Route::put('Ceacat/{id}',[
 Route::delete('Ceacat/{id}',[
     'as' => 'ceacat.destroy' , 'uses' => 'Ceacat@destroy'
 ]);
+-
+-
 Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
 Route::post("games", "GamesController@store");
 Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
@@ -68,8 +74,8 @@ Route::get("games/{id}", array('uses' => "GamesController@show", "as" => "games.
 Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "games.update"));
 Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
 Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
-
-
+-
+-
 Route::get('/cars', [
     'as'    => 'index',
     'uses'  => 'CarsController@index'
