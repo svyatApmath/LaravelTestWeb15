@@ -5,7 +5,7 @@
     </head>
     <body>
         @section('content')
-            <button type="button" class="btn btn-success">Back to index</button>
+        {!! link_to_action('CarsController@index', 'Back to starting page', [], ['class' => 'btn btn-success', 'style' => 'display:inline-block']) !!}
         @show
     </body>
 </html>

@@ -93,19 +93,19 @@ Route::post('/cars', [
     'as'    => 'store',
     'uses'  => 'CarsController@store'
 ]);
-Route::get('/cars/bugatti', [
+Route::get('/cars/{car}', [
     'as'    => 'show',
     'uses'  => 'CarsController@show'
 ]);
-Route::get('/cars/bugatti/edit', [
+Route::get('/cars/{car}/edit', [
     'as'    => 'edit',
     'uses'  => 'CarsController@edit'
 ]);
-Route::put('/cars/bugatti', [
+Route::put('/cars/{car}', [
     'as'    => 'update',
     'uses'  => 'CarsController@update'
 ]);
-Route::delete('/cars/bugatti', [
+Route::delete('/cars/{car}', [
     'as'    => 'delete',
     'uses'  => 'CarsController@destroy'
 ]);

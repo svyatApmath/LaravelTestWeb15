@@ -4,16 +4,16 @@
 
 @section('content')
 <h1>Car index page</h1>
-<a href="/cars/create"><button type="button" class="btn btn-success">Create</button></a>
-{!! Form::open(array('url' => '/cars', 'method' => 'post', 'style' => 'display:inline-block')) !!}
+{!! link_to_action('CarsController@create', 'Create', [], ['class' => 'btn btn-success', 'style' => 'display:inline-block']) !!}
+{!! Form::open(array('action' => 'CarsController@store', 'method' => 'post', 'style' => 'display:inline-block')) !!}
 {!! Form::submit('Store', ['class' => 'btn btn-default']) !!}
 {!! Form::close() !!}
-<a href="/cars/bugatti"><button type="button" class="btn btn-primary">Show</button></a>
-<a href="/cars/bugatti/edit"><button type="button" class="btn btn-danger">Edit</button></a>
-{!! Form::open(array('url' => '/cars/bugatti', 'method' => 'put', 'style' => 'display:inline-block')) !!}
+{!! link_to_action('CarsController@show', 'Show', ['car' => 'bugatti'], ['class' => 'btn btn-primary', 'style' => 'display:inline-block']) !!}
+{!! link_to_action('CarsController@edit', 'Edit', ['car' => 'bugatti'], ['class' => 'btn btn-danger', 'style' => 'display:inline-block']) !!}
+{!! Form::open(array('action' => ['CarsController@update', 'car' => 'bugatti'], 'method' => 'put', 'style' => 'display:inline-block')) !!}
 {!! Form::submit('Update', ['class' => 'btn btn-warning']) !!}
 {!! Form::close() !!}
-{!! Form::open(array('url' => '/cars/bugatti', 'method' => 'delete', 'style' => 'display:inline-block')) !!}
+{!! Form::open(array('action' => ['CarsController@destroy', 'car' => 'bugatti'], 'method' => 'delete', 'style' => 'display:inline-block')) !!}
 {!! Form::submit('Destroy', ['class' => 'btn btn-info']) !!}
 {!! Form::close() !!}
 @endsection
