@@ -33,6 +33,8 @@ Route::delete('countries/{id}',[
     'as' => 'destroy',
     'uses' => 'CountriesController@destroy'
     ]);
+
+
 Route::get('/fruits', ['as' => 'fruits.index', 'uses' => 'Fruits@index']);
 Route::get('/fruits/create', ['as'  => 'fruits.create', 'uses' => 'Fruits@create']);
 Route::post('/fruits', ['as' => 'fruits.store', 'uses' => 'Fruits@store']);
@@ -40,6 +42,8 @@ Route::get('/fruits/{fruit}', ['as' => 'fruits.show', 'uses' => 'Fruits@show']);
 Route::get('/fruits/{fruit}/edit', ['as' => 'fruits.edit', 'uses' => 'Fruits@edit']);
 Route::put('/fruits/{fruit}', ['as' => 'fruits.update', 'uses' => 'Fruits@update']);
 Route::delete('/fruits/{fruit}', ['as' => 'fruits.destroy', 'uses' => 'Fruits@destroy']);
+
+
 Route::get('Ceacat',[
     'as' => 'ceacat.index', 'uses' => 'Ceacat@index'
 ]);
@@ -69,37 +73,38 @@ Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "gam
 Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
 Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
 
+Route::get('computers/', 'ComputersController@index');
+Route::post('computers/', 'ComputersController@store');
+Route::get('computers/create', 'ComputersController@create');
+Route::get('computers/{id}', 'ComputersController@show');
+Route::get('computers/{id}/edit', 'ComputersController@edit');
+Route::post('computers/{id}','ComputersController@update');
+Route::delete('computers/{id}', 'ComputersController@destroy');
 
 Route::get('/cars', [
     'as'    => 'index',
     'uses'  => 'CarsController@index'
 ]);
-
 Route::get('/cars/create', [
     'as'    => 'create',
     'uses'  => 'CarsController@create'
 ]);
-
 Route::post('/cars', [
     'as'    => 'store',
     'uses'  => 'CarsController@store'
 ]);
-
 Route::get('/cars/bugatti', [
     'as'    => 'show',
     'uses'  => 'CarsController@show'
 ]);
-
 Route::get('/cars/bugatti/edit', [
     'as'    => 'edit',
     'uses'  => 'CarsController@edit'
 ]);
-
 Route::put('/cars/bugatti', [
     'as'    => 'update',
     'uses'  => 'CarsController@update'
 ]);
-
 Route::delete('/cars/bugatti', [
     'as'    => 'delete',
     'uses'  => 'CarsController@destroy'
