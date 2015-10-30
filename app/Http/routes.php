@@ -72,3 +72,34 @@ Route::get("games/{id}", array('uses' => "GamesController@show", "as" => "games.
 Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "games.update"));
 Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
 Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
+
+
+Route::get('sports/',[
+    'uses' => 'Sports@index',
+    'as' => 'sports.index'
+]);
+Route::get('sports/create',[
+    'uses' => 'Sports@create',
+    'as' => 'sports.create'
+]);
+Route::get('sports/{id}/edit',[
+    'uses' => 'Sports@edit',
+    'as' => 'sports.edit'
+]);
+Route::get('sports/{id}',[
+    'uses' => 'Sports@show',
+    'as' => 'sports.show'
+]);
+Route::delete('sports/{id}',[
+    'uses' => 'Sports@destroy',
+    'as' => 'sports.destroy'
+]);
+Route::put('sports/{id}',[
+    'uses' => 'Sports@update',
+    'as' => 'sports.update'
+]);
+Route::post('sports/',[
+    'uses' => 'Sports@store',
+    'as' => 'sports.store'
+]);
+
