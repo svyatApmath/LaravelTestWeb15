@@ -80,3 +80,32 @@ Route::get('computers/{id}', 'ComputersController@show');
 Route::get('computers/{id}/edit', 'ComputersController@edit');
 Route::post('computers/{id}','ComputersController@update');
 Route::delete('computers/{id}', 'ComputersController@destroy');
+
+Route::get('/cars', [
+    'as'    => 'index',
+    'uses'  => 'CarsController@index'
+]);
+Route::get('/cars/create', [
+    'as'    => 'create',
+    'uses'  => 'CarsController@create'
+]);
+Route::post('/cars', [
+    'as'    => 'store',
+    'uses'  => 'CarsController@store'
+]);
+Route::get('/cars/{car}', [
+    'as'    => 'show',
+    'uses'  => 'CarsController@show'
+]);
+Route::get('/cars/{car}/edit', [
+    'as'    => 'edit',
+    'uses'  => 'CarsController@edit'
+]);
+Route::put('/cars/{car}', [
+    'as'    => 'update',
+    'uses'  => 'CarsController@update'
+]);
+Route::delete('/cars/{car}', [
+    'as'    => 'delete',
+    'uses'  => 'CarsController@destroy'
+]);
