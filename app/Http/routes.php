@@ -68,13 +68,35 @@ Route::delete('whale/{id}',[
 
 ]);
 
-Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
-Route::post("games", "GamesController@store");
-Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
-Route::get("games/{id}", array('uses' => "GamesController@show", "as" => "games.show"));
-Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "games.update"));
-Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
-Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
+
+// games
+
+Route::get('games', [
+    'as' => 'games',  'uses' => 'GamesController@index'
+    ]);
+
+Route::post('games', 'GamesController@store');
+
+Route::get('games/create', [
+    'as' => 'games.create', 'uses' => 'GamesController@create'
+    ]);
+
+Route::get('games/{id}', [
+    'as' => 'games.show', 'uses' => 'GamesController@show'
+    ]);
+
+Route::post('games/{id}', [
+    'as' => 'games.update', 'uses' => 'GamesController@update'
+    ]);
+
+Route::delete('games/{id}', [
+    'as' => 'games.destroy', 'uses' => 'GamesController@destroy'
+    ]);
+
+Route::get('games/{id}/edit', [
+    'as' => 'games.edit', 'uses' => 'GamesController@edit'
+    ]);
+
 
 Route::get('computers/', 'ComputersController@index');
 Route::post('computers/', 'ComputersController@store');
