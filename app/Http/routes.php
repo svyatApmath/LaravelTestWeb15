@@ -44,27 +44,30 @@ Route::put('/fruits/{fruit}', ['as' => 'fruits.update', 'uses' => 'Fruits@update
 Route::delete('/fruits/{fruit}', ['as' => 'fruits.destroy', 'uses' => 'Fruits@destroy']);
 
 
-Route::get('Ceacat',[
-    'as' => 'ceacat.index', 'uses' => 'Ceacat@index'
+Route::get('whale',[
+    'as' => 'whale.index', 'uses' => 'Whales@index'
 ]);
-Route::get('Ceacat/create',[
-    'as' => 'ceacat.create', 'uses' => 'Ceacat@create'
+Route::get('whale/create',[
+    'as' => 'whale.create', 'uses' => 'Whales@create'
 ]);
-Route::post('Ceacat',[
-    'as' => 'ceacat.store', 'uses' => 'Ceacat@store'
+Route::post('whale',[
+    'as' => 'whale.store', 'uses' => 'Whales@store'
 ]);
-Route::get('Ceacat/{id}',[
-    'as' => 'ceacat.show', 'uses' => 'Ceacat@show'
+Route::get('whale/{id}',[
+    'as' => 'whale.show', 'uses' => 'Whales@show'
 ]);
-Route::get('Ceacat/{id}/edit',[
-    'as' => 'ceacat.edit', 'uses' => 'Ceacat@edit'
+Route::get('whale/{id}/edit',[
+    'as' => 'whale.edit', 'uses' => 'Whales@edit'
 ]);
-Route::put('Ceacat/{id}',[
-    'as' => 'ceacat.update', 'uses' => 'Ceacat@edit'
+
+Route::put('whale/{id}',[
+    'as' => 'whale.update', 'uses' => 'Whales@update'
 ]);
-Route::delete('Ceacat/{id}',[
-    'as' => 'ceacat.destroy' , 'uses' => 'Ceacat@destroy'
+Route::delete('whale/{id}',[
+    'as' => 'whale.destroy' , 'uses' => 'Whales@destroy',
+
 ]);
+
 Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
 Route::post("games", "GamesController@store");
 Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
