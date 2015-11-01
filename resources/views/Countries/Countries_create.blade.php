@@ -5,7 +5,7 @@
 @section('content')
 <h2>Create Country!</h2>
 
-{!! Form::open(['route' => 'store', 'method' => 'POST']) !!}
+{!! Form::open(['route' => 'countries.store', 'method' => 'POST']) !!}
 
 {!! Form::label('Identity') !!}
 {!! Form::text('identity', null, ['class' => 'form-control']) !!}
