@@ -6,31 +6,31 @@ Route::get('/', function(){
 
 
 Route::get('countries/',[
-    'as'=> 'country.index',
+    'as'=> 'countries.index',
     'uses'=>'CountriesController@index'
     ]);
 Route::get('countries/create',[
-    'as' => 'country.create',
+    'as' => 'countries.create',
     'uses' => 'CountriesController@create'
     ]);
 Route::get('countries/{id}',[
-    'as' => 'country.show',
+    'as' => 'countries.show',
     'uses' => 'CountriesController@show'
     ]);
 Route::post('countries/',[
-    'as'=> 'country.store',
+    'as'=> 'countries.store',
     'uses'=>'CountriesController@store'
     ]);
 Route::get('countries/{id}/edit',[
-    'as' => 'country.edit',
+    'as' => 'countries.edit',
     'uses' => 'CountriesController@edit'
     ]);
 Route::put('countries/{id}',[
-    'as' => 'country.update',
+    'as' => 'countries.update',
     'uses' => 'CountriesController@update'
     ]);
 Route::delete('countries/{id}',[
-    'as' => 'country.destroy',
+    'as' => 'countries.destroy',
     'uses' => 'CountriesController@destroy'
     ]);
 
