@@ -134,3 +134,31 @@ Route::delete('/cars/{car}', [
     'as'    => 'delete',
     'uses'  => 'CarsController@destroy'
 ]);
+
+// Rick Astley, author : kmtvb
+
+Route::group(['prefix' => 'rickastley'], function () {
+    Route::get('', [
+        'as' => 'rickastley.index', 'uses' => 'RickastleyController@index'
+    ]);
+    Route::get('create', [
+        'as' => 'rickastley.create', 'uses' => 'RickastleyController@create'
+    ]);
+    Route::post('', [
+        'as' => 'rickastley.store', 'uses' => 'RickastleyController@store'
+    ]);
+    Route::get('{id}', [
+        'as' => 'rickastley.show', 'uses' => 'RickastleyController@show'
+    ]);
+    Route::get('{id}/edit', [
+        'as' => 'rickastley.edit', 'uses' => 'RickastleyController@edit'
+    ]);
+    Route::put('{id}', [
+        'as' => 'rickastley.update', 'uses' => 'RickastleyController@update'
+    ]);
+    Route::delete('{id}', [
+        'as' => 'rickastley.delete', 'uses' => 'RickastleyController@delete'
+    ]);
+
+});
+
