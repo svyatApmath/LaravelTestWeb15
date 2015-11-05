@@ -37,7 +37,7 @@ class RickastleyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('rickastley.store');
     }
 
     /**
