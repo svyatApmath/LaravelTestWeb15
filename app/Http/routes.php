@@ -126,7 +126,7 @@ Route::get('/cars/{car}/edit', [
     'as'    => 'edit',
     'uses'  => 'CarsController@edit'
 ]);
-<<<<<<< HEAD
+
 Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
 Route::post("games", "GamesController@store");
 Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
@@ -165,7 +165,7 @@ Route::post('sports/',[
     'as' => 'sports.store'
 ]);
 
-=======
+
 Route::put('/cars/{car}', [
     'as'    => 'update',
     'uses'  => 'CarsController@update'
@@ -203,4 +203,4 @@ Route::group(['prefix' => 'rickastley'], function () {
 });
 
 
->>>>>>> upstream/master
+
