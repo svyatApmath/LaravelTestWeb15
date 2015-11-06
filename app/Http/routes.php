@@ -190,4 +190,7 @@ Route::group(['prefix' => 'rickastley'], function () {
     Route::delete('{id}', [
         'as' => 'rickastley.delete', 'uses' => 'RickastleyController@delete'
     ]);
+
 });
+
+
