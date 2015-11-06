@@ -126,46 +126,6 @@ Route::get('/cars/{car}/edit', [
     'as'    => 'edit',
     'uses'  => 'CarsController@edit'
 ]);
-
-Route::get("games", array('uses' => "GamesController@index", "as" => "games"));
-Route::post("games", "GamesController@store");
-Route::get("games/create", array('uses' => "GamesController@create", "as" => "games.create"));
-Route::get("games/{id}", array('uses' => "GamesController@show", "as" => "games.show"));
-Route::post("games/{id}", array('uses' => "GamesController@update", "as" => "games.update"));
-Route::delete("games/{id}", array('uses' => "GamesController@destroy", "as" => "games.destroy"));
-Route::get("games/{id}/edit", array('uses' => "GamesController@edit", "as" => "games.edit"));
-
-
-Route::get('sports/',[
-    'uses' => 'Sports@index',
-    'as' => 'sports.index'
-]);
-Route::get('sports/create',[
-    'uses' => 'Sports@create',
-    'as' => 'sports.create'
-]);
-Route::get('sports/{id}/edit',[
-    'uses' => 'Sports@edit',
-    'as' => 'sports.edit'
-]);
-Route::get('sports/{id}',[
-    'uses' => 'Sports@show',
-    'as' => 'sports.show'
-]);
-Route::delete('sports/{id}',[
-    'uses' => 'Sports@destroy',
-    'as' => 'sports.destroy'
-]);
-Route::put('sports/{id}',[
-    'uses' => 'Sports@update',
-    'as' => 'sports.update'
-]);
-Route::post('sports/',[
-    'uses' => 'Sports@store',
-    'as' => 'sports.store'
-]);
-
-
 Route::put('/cars/{car}', [
     'as'    => 'update',
     'uses'  => 'CarsController@update'
@@ -202,8 +162,31 @@ Route::group(['prefix' => 'rickastley'], function () {
 
 });
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 88fa7c96e73cd685890d3344b531ea37abd139b9
+Route::get('sports/',[
+    'uses' => 'Sports@index',
+    'as' => 'sports.index'
+]);
+Route::get('sports/create',[
+    'uses' => 'Sports@create',
+    'as' => 'sports.create'
+]);
+Route::get('sports/{id}/edit',[
+    'uses' => 'Sports@edit',
+    'as' => 'sports.edit'
+]);
+Route::get('sports/{id}',[
+    'uses' => 'Sports@show',
+    'as' => 'sports.show'
+]);
+Route::delete('sports/{id}',[
+    'uses' => 'Sports@destroy',
+    'as' => 'sports.destroy'
+]);
+Route::put('sports/{id}',[
+    'uses' => 'Sports@update',
+    'as' => 'sports.update'
+]);
+Route::post('sports/',[
+    'uses' => 'Sports@store',
+    'as' => 'sports.store'
+]);
