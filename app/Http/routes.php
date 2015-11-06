@@ -202,8 +202,3 @@ Route::group(['prefix' => 'rickastley'], function () {
 
 });
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 88fa7c96e73cd685890d3344b531ea37abd139b9
