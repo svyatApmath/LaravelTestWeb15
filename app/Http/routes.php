@@ -193,4 +193,32 @@ Route::group(['prefix' => 'rickastley'], function () {
 
 });
 
-
+//motorcycles
+Route::get('motorcycles/',[
+    'uses' => 'motorcycles@index',
+    'as' => 'motorcycles.index'
+]);
+Route::get('motorcycles/create',[
+    'uses' => 'motorcycles@create',
+    'as' => 'motorcycles.create'
+]);
+Route::get('motorcycles/{id}/edit',[
+    'uses' => 'motorcycles@edit',
+    'as' => 'motorcycles.edit'
+]);
+Route::get('motorcycles/{id}',[
+    'uses' => 'motorcycles@show',
+    'as' => 'motorcycles.show'
+]);
+Route::delete('motorcycles/{id}',[
+    'uses' => 'motorcycles@destroy',
+    'as' => 'motorcycles.destroy'
+]);
+Route::put('motorcycles/{id}',[
+    'uses' => 'motorcycles@update',
+    'as' => 'motorcycles.update'
+]);
+Route::post('motorcycles/',[
+    'uses' => 'motorcycles@store',
+    'as' => 'motorcycles.store'
+]);
